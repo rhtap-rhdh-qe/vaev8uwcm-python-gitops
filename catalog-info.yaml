@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vaev8uwcm-python-gitops
+  description: This is GitOps manifest for vaev8uwcm-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=vaev8uwcm-python
+    backstage.io/kubernetes-id: vaev8uwcm-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: vaev8uwcm-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:vaev8uwcm-python
